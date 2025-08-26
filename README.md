@@ -1,11 +1,11 @@
-##bg_substraction_code.py
-- 使用說明
+# bg_substraction_code.py
+## 使用說明
 頁面中的指定熱區總共分為三種類型,分別是
 Close : 關閉程式,
 Open Link : 打開 youtube 連結,
 Capture photo : 拍攝(圖檔 img.png 將儲存在同個資料夾中),
 且當我的手移動至指定熱區時,將會執行對應的指令。若按下 q,則直接關閉程式離開。
-- 設計想法
+## 設計想法
 使用 bg_subtractor.apply()的函數之後,將會產生 foreground mask,白色顯示圖
 像的前景(移動物體),黑色則是靜態背景。至於,如何判定手是否進入熱區,我是計
 算 foreground mask 在熱區區域內的 Return of interest (ROI),ROI 代表該區域中每
@@ -14,18 +14,18 @@ Capture photo : 拍攝(圖檔 img.png 將儲存在同個資料夾中),
 相對應的指令。
 另外,為了預防手快速揮過熱區,導致指令意外被觸發的可能,因此我額外增加手需停留在區域內一段時間(預設 0.8 秒)的限制, 指令才能被執行。
 
-##finger_code.py
-- 使用說明
+# finger_code.py
+## 使用說明
 頁面中的指定熱區總共分為三種類型,分別是
 Close: 關閉程式,
 Open Link: 打開 youtube 連結,
 Capture photo: 拍攝(圖檔 img.png 將儲存在同個資料夾中),
 且當我的手(食指的第二指節作為偵測點)移動至指定熱區時,將會執行對應的指令。若按下 q,則直接關閉程式離開。
-- 設計想法
+## 設計想法
 藉由鏡頭影像頁面的絕對位置,使用 Mediapipe 內建函式取得「食指的第二
 指節」在頁面的位置,如果手指偵測到的位置在指定熱區內,即可觸發指
 令。
-- 輸出結果
+## 輸出結果 (Terminal)
 1. 拍照指令
 拍照
 照片儲存成功
